@@ -44,7 +44,7 @@ Run:
 * file system reading/writing dynamically 
 * Node.js built in function 'require' to load modules
 * create CLI with promise-based npm 'inquirer' package
-* create tests
+* create and run jest tests : https://www.robinwieruch.de/node-js-jest
 * create and use 'module.export' : https://www.sitepoint.com/understanding-module-exports-exports-node-js/
 
 ## Contact:
