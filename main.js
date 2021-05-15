@@ -20,15 +20,15 @@ let renderPage = something => {
                 <title>Team Profile</title>
             </head>
             <body>
-                <div class="jumbotron jumbotron-fluid">
+                <div class="jumbotron jumbotron-fluid" style="background-color: crimson">
                     <div class="container">
-                        <h1 class="form-inline justify-content-center">Employee Team Profiles</h1>
-                        <p class="form-inline justify-content-center">These are cards containing employee/team info:</p>
+                        <h1 class="form-inline justify-content-center text-white">Employee Team Profiles</h1>
+                        <p class="form-inline justify-content-center text-white">These are cards containing employee/team info:</p>
                     </div>
                 </div>
 
-                <div class="container-fluid">
-                    <div class="row">`;
+                <div class="container-body container-fluid">
+                    <div class ="row">`;
 
     //Creating/writing initial html file
     fs.writeFile('team.html', html, function (error) {
@@ -54,47 +54,67 @@ let addToPage = employee => {
         switch (role) {
             case 'Engineer':
                 let gitHub = employee.getGithub();
-                info =
-                    `<div class="col-12">
-                        <div class="card mx-auto mb-3" style="width: 18rem">
-                            <h4 class="card-header">${name}<br /><br />Engineer</h4>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">ID: ${id}</li>
-                                <li class="list-group-item">Email Address: ${email}</li>
-                                <li class="list-group-item">GitHub: ${gitHub}</li>
+                info = `
+                <div class="col-md-4 col-sm-6 col-12 col-lg-3">    
+                    <div class="card shadow-lg mb-5 bg-white rounded">
+                        <div class="card-header bg-primary">
+                            <h3 class="text-white text-center">${name}</h3>  
+                            <h4 class="text-white text-center">--- <i class="fas fa-tools"> ---</i>
+                            <h4 class="text-white text-center">Engineer</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li>Employee ID: ${id}</li>
+                                <li>Email Address: ${email}</li>
+                                <li>GitHub: ${gitHub}</li>
                             </ul>
                         </div>
-                    </div>`;
+                    </div>
+                </div>`;
                 break;
 
             case 'Intern':
                 let school = employee.getSchool();
-                info =
-                    `<div class="col-12">
-                        <div class="card mx-auto mb-3" style="width: 18rem">
-                            <h4 class="card-header">${name}<br /><br />Intern</h4>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">ID: ${id}</li>
-                                <li class="list-group-item">Email Address: ${email}</li>
-                                <li class="list-group-item">School: ${school}</li>
+                info = `
+                <div class="col-md-4 col-sm-6 col-12 col-lg-3">    
+                    <div class="card shadow-lg mb-5 bg-white rounded">
+                        <div class="card-header bg-primary">
+                            <h3 class="text-white text-center">${name}</h3>  
+                            <h4 class="text-white text-center">--- <i class="fas fa-user-mug-hot"></i> ---</h4>
+                            <h4 class="text-white text-center">Intern</h4>
+                        </div>
+                
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li>Employee ID: ${id}</li>
+                                <li>Email Address: ${email}</li>
+                                <li>School: ${school}</li>
                             </ul>
                         </div>
-                    </div>`;
+                    </div>
+                </div>`;
                 break;
 
             default:    //Default for manager
                 let officePhone = employee.getOfficeNumber();
-                info =
-                    `<div class="col-12">
-                        <div class="card mx-auto mb-3" style="width: 18rem">
-                            <h4 class="card-header">${name}<br /><br />Manager</h4>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">ID: ${id}</li>
-                                <li class="list-group-item">Email Address: ${email}</li>
-                                <li class="list-group-item">Office Phone: ${officePhone}</li>
+                info = `
+                <div class="col-md-4 col-sm-6 col-12 col-lg-3">    
+                    <div class="card shadow-lg mb-5 bg-white rounded">
+                        <div class="card-header bg-primary">
+                            <h3 class="text-white text-center">${name}</h3>
+                            <h4 class="text-white text-center">--- <i class="fas fa-glasses text-white text-center"></i> ---</h4>  
+                            <h4 class="text-white text-center">Manager</h4>
+                        </div>
+                
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li>Employee ID: ${id}</li>
+                                <li>Email Address: ${email}</li>
+                                <li>Office Number: ${officePhone}</li>
                             </ul>
                         </div>
-                    </div>`
+                    </div>
+                </div>`;
                 break;
         }
         console.log("Adding employee(s)");
