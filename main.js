@@ -80,7 +80,7 @@ let addToPage = employee => {
                     <div class="card shadow-lg mb-5 bg-white rounded">
                         <div class="card-header bg-primary">
                             <h3 class="text-white text-center">${name}</h3>  
-                            <h4 class="text-white text-center">--- <i class="fas fa-user-mug-hot"></i> ---</h4>
+                            <h4 class="text-white text-center">--- <i class="fas fa-mug-hot"></i> ---</h4>
                             <h4 class="text-white text-center">Intern</h4>
                         </div>
                 
