@@ -31,13 +31,13 @@ summaries of the employees, creating a team list. Testing is also added to the c
 User can create a team/employee info card list.
 
 Install:
-npm init
-npm install inquirer
-npm install --save-dev jest
+* npm init
+* npm install inquirer
+* npm install --save-dev jest
 
 Run:
-npm run test
-node main.js
+* npm run test
+* node main.js
 
 *Used to learn, practice, test, understand, and implement various JavaScript tools including test driven development: 
 
